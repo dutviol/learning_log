@@ -5,7 +5,11 @@ from django.urls import path, include
 
 from . import views
 
+app_name = 'learning_logs'
 urlpatterns = [
     #Pagina incial
-    url('', views.index, name='index'),
+    path('', views.index.as_view(), name='index'),
+
+    #Mostrar todos os assuntos
+    path('topics/', views.topics.as_view(), name='topics'),
 ]
